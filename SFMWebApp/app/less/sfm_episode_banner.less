@@ -1,0 +1,257 @@
+﻿@import (reference) 'sfm_variables.less';
+@import (reference) 'sfm_mixins.less';
+
+div.sfm-episode-banner.row {
+    color: @white;
+    text-align: @sfm-episode-banner-row-text-align-border;
+    margin: @sfm-row-padding-margin;
+    padding: @sfm-row-padding-margin;
+
+    div.panel.panel-default {
+        &.sfm-episode-banner-hidden-spacer{
+            height: @sfm-episode-banner-height;
+            visibility: hidden;
+        }
+        &.sfm-episode-banner{      
+        padding: @sfm-row-padding-margin;
+        margin: @sfm-episode-banner-margin;
+        border: @sfm-episode-banner-panel-border;
+        box-shadow: @sfm-episode-banner-panel-border;
+        -webkit-box-shadow: @sfm-episode-banner-panel-border;
+        position: absolute;
+        min-width: 100%;
+        z-index: 5;
+        background-color: transparent;
+        //&.statusSection {
+        //    margin-bottom: @sfm-episode-banner-margin;
+        //}
+        div.panel-heading {
+            padding: @sfm-row-padding-margin;
+            height: @sfm-episode-banner-height;
+            margin: @sfm-row-padding-margin;
+            border-bottom: @sfm-episode-banner-panel-border;
+            background-image: @sfm-episode-banner-header-md-7-background-image;
+
+            div.col-md-7 {
+                div.row {
+                    margin: @sfm-row-padding-margin;
+                    padding-top: 5px;
+                    color: @white;
+
+                    div.col-xs-8 {
+                        span.sfm-episode-banner-patient-name {
+                            font-size: @font-size-h3;
+                        }
+                    }
+
+                    div.col-xs-4 {
+                        span.sfm-episode-banner-label {
+                            font-style: italic;
+                            font-size: @font-size-h6;
+                        }
+                    }
+
+                    div.col-xs-6 {
+                        span.sfm-episode-banner-label {
+                            font-style: italic;
+                            font-size: @font-size-h6;
+                        }
+                    }
+                }
+            }
+
+            div.col-md-5 {
+                padding-right: 2px;
+
+                div.sfm-episode-banner-header-right-section {
+                    height: @sfm-episode-banner-height - 2;
+                    width: 100%;
+                    padding: @sfm-row-padding-margin;
+                    margin: @sfm-row-padding-margin;
+                    background-color: transparent;
+                    background-image: @sfm-episode-banner-header-md-5-background-image;
+
+                    div.row {
+                        margin: @sfm-row-padding-margin;
+                        padding-top: 5px;
+                        color: @white;
+
+                        div.col-xs-6 {
+                            span.sfm-episode-banner-label {
+                                font-size: @font-size-h6;
+                            }
+
+                            div.sfm-episode-banner-status {
+                                padding: 1px 5px;
+                                background-color: @sfm-episode-banner-status-bg-color;
+                                border-radius: 5px;
+                                color: @white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        div.panel-collapse {
+            /*z-index: 10;
+            position: absolute;*/
+            overflow: hidden;
+
+            div.panel-body {
+                background-color: darken(@gray-medium, 10%);
+                border-bottom: solid 5px @gray-dark;
+
+                div.row {
+                    margin: @sfm-row-padding-margin;
+                    padding: @sfm-row-padding-margin;
+
+                    .tab-container,
+                    .tab-container.active { //tabset element
+                        ul.nav.nav-tabs {
+                            background-color: @gray-dark;
+                            border-bottom: solid 2px @gray-medium;
+
+                            li.nav-item {
+                                padding:2px 0 5px 0;
+                                background-color: transparent;
+
+                                &.active {
+                                    color: @white;
+
+                                    a.nav-link {
+                                        &.active {
+                                            color: lighten(@brand-primary, 30%);
+
+                                            &:hover {
+                                            }
+                                        }
+
+                                        &:hover {
+                                            color: @white;
+                                        }
+
+                                        span {
+                                        }
+                                    }
+                                }
+
+                                a.nav-link {
+                                    border-left: none;
+                                    border-top: none;
+                                    border-bottom: none;
+                                    border-right: solid 1px fade(@white, 50%);
+                                    padding-top: 2px;
+                                    padding-bottom: 2px;
+                                    color: lighten(@gray-medium, 10%);
+
+                                    &.active {
+                                        background-color: transparent;
+                                        color: lighten(@brand-primary, 30%);
+
+                                        &:hover {
+                                            background-color: transparent;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        background-color: transparent;
+                                        color: @white;
+                                    }
+
+                                    span {
+                                    }
+                                }
+                            }
+                        }
+
+                        div.tab-content {
+                            .tab-pane { //tab element
+                                &.active {
+                                    div.sfm-episode-banner-visit-demographics.row {
+                                        div.sfm-episode-banner-vst-dem-section-1,
+                                        div.sfm-episode-banner-vst-dem-section-2,
+                                        div.sfm-episode-banner-vst-dem-section-3 {
+                                            &.horizontal-separator{
+                                                border-top: solid 1px fade(@white, 50%);
+                                            }
+                                            div.row.sfm-episode-banner-visit-demo-row {
+                                                div.col-xs-3 {
+                                                    padding: 5px;
+                                                    &:first-child{
+                                                        padding-left: 15px;
+                                                    }
+
+                                                    span.sfm-episode-banner-label {
+                                                        font-size: @font-size-small;
+                                                        font-style: italic;
+                                                        color: fade(@white, 50%);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                div.sfm-episode-banner-visit-demographics.row {
+                                    div.sfm-episode-banner-vst-dem-section-1,
+                                    div.sfm-episode-banner-vst-dem-section-2,
+                                    div.sfm-episode-banner-vst-dem-section-3 {
+                                        margin: @sfm-row-padding-margin;
+                                        padding: @sfm-row-padding-margin;
+
+                                        div.row.sfm-episode-banner-visit-demo-row {
+                                            margin: @sfm-row-padding-margin;
+                                            padding: @sfm-row-padding-margin;
+
+                                            div.col-xs-3 {
+                                                span.sfm-episode-banner-label {
+                                                    font-style: italic;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        div.panel-footer {
+            position: relative;
+            padding: @sfm-row-padding-margin;
+            background-color: transparent;
+            border: none;
+
+            div.trapezoid {                   
+                    .box-sizing(content-box);
+                    width: 60px;
+                    height: 0;
+                    border: 10px solid @trapezoid-border;
+                    border-bottom: 0 solid;
+                    border-top: 20px solid @gray-dark;
+                    color: @white;
+                    -o-text-overflow: clip;
+                    text-overflow: clip;
+
+                    &.centered {
+                        float: none;
+                        margin: 0 auto;
+                    }
+
+                    a {
+                        color: @white;
+
+                        i.fa {
+                            position: relative;
+                            top: -24px;
+                            left: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

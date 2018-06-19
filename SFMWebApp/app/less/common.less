@@ -1,0 +1,517 @@
+﻿@import (reference) 'sfm_variables.less';
+
+body.sfm-wrapper {
+    div.container-fluid {
+        div.row {
+            &.sfm-loading {
+                margin-top: @sfm-margin-top;
+            }
+            div.col-md-12 {//header bar
+                padding: 0;
+                margin: 0;
+
+                div.row {
+                    padding:0;
+                    margin:0;
+                    div.panel.panel-default {
+                        padding:5px;
+                        margin:0;
+                        background-color: lighten(@gray-medium, 30%);
+                        div.panel-body {
+                            div.col-md-2{//search section
+                                div.input-group.input-group-lg{
+                                    input.form-control{
+                                        span.input-group-btn {
+                                            button.btn.btn-default {
+                                                i.fa.fa-search {
+                                                    font-size: 120%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }//input group
+                            }//col-md-2
+                            div.col-md-10{//patients section
+                                div.sfm-patients{
+                                    ul.nav{
+                                        > li,
+                                        &.nav-pills ul{
+                                            width: 280px;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            //border: solid 1px @gray-dark;
+                                            > a{
+                                                border: solid 2px @gray-medium;
+                                                border-radius: 10px;
+                                                overflow: hidden;
+                                                width: 280px;
+                                                text-overflow:ellipsis;
+                                                &:active,
+                                                &:focus{
+                                                    background-color: @nav-pills-active-link-bg;
+                                                    border: solid 2px @white;
+                                                    color: @white;
+                                                        span.h3{
+                                                        color:  @white;
+                                                    }
+                                                        span.sfm-divider{
+                                                            font-size: @font-size-xlarge;
+                                                            color: fade(@white, 50%);
+                                                        }
+                                                    i.fa.fa-times-circle.fa-2x{
+                                                        color: fade(@white, 50%);
+                                                    }
+                                                }
+                                                &:hover{
+                                                    background-color: @nav-pills-active-link-hover-bg; 
+                                                }
+                                                &:visited{
+                                                    
+                                                }
+                                                span.h3{
+                                                    overflow: hidden;
+                                                    width: 280px;
+                                                    color: @gray-dark;
+                                                }
+                                                span.sfm-divider{
+                                                    font-size: @font-size-xlarge;
+                                                    color: fade(@gray-dark, 50%);
+                                                }
+                                                i.fa.fa-times-circle.fa-2x{
+                                                    color: fade(@gray-dark, 50%);
+                                                    //padding-left:@sfm-panel-heading-icon-padding-left;
+                                                    //padding-bottom: 3px;
+                                                }
+                                            }//a
+                                        }
+                                    }//ul.nav-pills
+                                }//div.sfm-patients
+                            }//col-md-10
+                        }//panel-body
+                    }//panel-default
+                }//div.row
+            }//div.col-md-12  
+            div.sfm-episodes.col-md-3.col-lg-3{//sfm-episodes
+                padding:0;
+                margin:0;
+                background-color: @gray-light;
+                div.panel-group{
+                    div.panel.panel-default{
+                        div.panel-heading{//want to make this diff when collapsed in
+                                background-color: @brand-primary;
+                                color: @white;
+                                border-bottom: none;
+                            span.h3{
+
+                            }
+                            span.badge{
+                                color: @brand-primary;
+                                background-color: @white;
+                            }
+                            span.pull-right{
+                                a{
+                                    i.fa.fa-angle-down.fa-2x{
+                                        color: @white;
+                                    }
+                                }
+                            }
+                        }//panel-heading
+                        div.panel-body{
+                            padding:5px;
+                            background-color: @brand-primary;
+                            border-top: none;
+                            div.sfm-episode-visit-details{
+                                padding:10px;
+                                border-top-left-radius: 10px;
+                                border-top-right-radius: 10px;
+                                background-color: @white;
+                                div.row{
+                                    div.col-xs-6{
+                                        span.h3{
+
+                                        }
+                                        span.h4{
+
+                                        }
+                                        i.fa.fa-ellipsis-h.fa-2x{
+
+                                        }
+                                    }
+                                    div.col-xs-12{
+                                        span.h5{
+
+                                        }
+                                    }
+                                }//row   
+                            }
+                        }//panel-body
+                    }//panel-default
+                        div.panel-collapse{
+                            &.collapse.in {
+                                div.panel-body{
+                                    div.panel.panel-default{
+                                        div.panel-heading {
+                                                background-color: @gray;
+                                                border-color: @gray;
+                                            }
+                                        }
+                                    }//close panel-body
+                                div.panel.panel-default{
+                                    div.panel-heading{
+                                            
+                                        span.h4{
+
+                                        }
+                                        span.pull-right{
+                                            i.fa.fa-angle-down.fa-2x{
+
+                                            }
+                                        }
+                                    }
+                                }//close panel-default
+                            }//close collapse in
+                            div.panel-body{
+                                div.panel.panel-default{
+                                    div.panel-heading{
+                                            
+                                        span.h4{
+
+                                        }
+                                        span.pull-right{
+                                            i.fa.fa-angle-down.fa-2x{
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }//close panel-body
+                        }//close panel-collapse
+                }//close panel-group
+            }//close sfm-episodes
+            div.sfm-accountdetails.col-md-9.col-lg-9{
+                margin:0;
+                padding:0;
+                div.row{
+                    padding:0;
+                    margin:0;
+                    div.col-lg-12{
+                        padding:0;
+                        margin:0;
+                        div.sfm-episode-banner.row{
+                            //episode banner
+                        }
+                        div.sfm-episode-summary.row{
+                            padding: 10px;
+                            .panel-group{//accordion
+                                accordion-group{
+                                    &.panel-open{
+                                        div.panel.card.panel-default{
+                                            div.panel-heading.card-header{
+                                                background-color: @brand-primary;
+                                                div.accordion-toggle{
+                                                    div{//accordion-heading
+                                                        span.h3{
+                                                            color: @white;
+                                                        }
+                                                        span.badge{
+                                                            color: @brand-primary;
+                                                            background-color: @white;
+                                                        }
+                                                        span.pull-right{
+                                                            
+                                                            span.small{
+                                                                color: @white;
+                                                            }
+                                                            span.sfm-divider{
+                                                                font-size: @font-size-xlarge;
+                                                                color: fade(@white, 50%);
+                                                                padding-top: -5px;
+                                                            }
+                                                            i.fa.fa-2x{
+                                                                color: @white;
+                                                                &.fa-angle-down{
+                                                                    color: @white;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }//accordion-toggle
+                                            }//panel-heading
+                                            div.panel-collapse{
+                                                &.collapse.in {
+                                                    div.panel-body.card-block{
+                                                        div.row{
+                                                            div.col-md-9{
+                                                                div.row{
+                                                                    &.sfm-comments,
+                                                                    &.sfm-transactions{
+                                                                        div.col-md-12{
+                                                                            div.row{
+                                                                                div.panel-heading{//may need to change to different class since not a panel
+                                                                                    padding-left: 0;
+                                                                                    span{
+                                                                                        &.h3{
+                                                                                            color: @brand-primary;
+                                                                                            font-weight:700;
+                                                                                        }
+                                                                                        &.small{
+                                                                                            color: @brand-primary;
+                                                                                        }
+                                                                                    }
+                                                                                }//panel-heading
+                                                                                div.table-responsive{
+                                                                                    table.table.table-striped.table-condensed.table-hover{
+                                                                                        thead{
+                                                                                            tr{
+                                                                                                background-color: @gray-light;
+                                                                                                th{
+                                                                                                    a{
+                                                                                                        &.text-nowrap,
+                                                                                                        &:active,
+                                                                                                        &:visited,
+                                                                                                        &:hover,
+                                                                                                        &:focus{
+                                                                                                            color: @gray-dark;
+                                                                                                            font-weight: 400;
+                                                                                                        }
+                                                                                                    } 
+                                                                                                    &.sfm-width-xsmall-percent{
+                                                                                                        width: @sfm-width-xsmall-percent;
+                                                                                                    }
+                                                                                                    &.sfm-width-small-percent{
+                                                                                                        width: @sfm-width-small-percent;
+                                                                                                    }
+                                                                                                    &.sfm-width-sm-md-percent{
+                                                                                                        width: @sfm-width-sm-md-percent;
+                                                                                                    }
+                                                                                                    &.sfm-width-sm-md-medium-percent{
+                                                                                                        width: @sfm-width-sm-md-medium-percent;
+                                                                                                    }
+                                                                                                    &.sfm-width-md-lg-percent{
+                                                                                                        width: @sfm-width-md-lg-percent;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                        tbody{
+                                                                                            tr{
+                                                                                                &:hover{
+                                                                                                    background-color: @brand-primary-light;
+                                                                                                }
+                                                                                                td{
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                        tfoot{
+                                                                                            tr{
+                                                                                                td{
+                                                                                                    a{
+                                                                                                        font-size: 90%;
+                                                                                                    }
+                                                                                                    span.small{
+                                                                                                        color: @brand-primary;
+                                                                                                    }
+                                                                                                }    
+                                                                                            }
+                                                                                        }
+                                                                                    }//table
+                                                                                }//div.table-responsive
+                                                                            }//row
+                                                                        }//col-md-12
+                                                                    }//&sfm-transactions/sfm-comments
+                                                                }//row
+                                                            }//col-md-9
+                                                            div.col-md-3{
+                                                                //sfm-episodeFS (expanded)
+                                                            }//col-md-3
+                                                        }//row
+                                                    }//.panel-body.card-block
+                                                }//&.collapse.in
+                                            }//panel-collapse
+                                        }//.panel.card.panel-default
+                                    }//&panel-open
+                                    div.panel.card.panel-default{//when not open
+                                        div.panel-heading.card-header{
+                                            background-color: @gray-light;
+                                            div.accordion-toggle{
+                                                div{//accordion-heading
+                                                    span.h3{
+                                                        color:  @gray-dark;
+                                                    }
+                                                    span.badge{
+                                                        color: @gray-light;
+                                                        background-color:  @gray-dark;
+                                                    }
+                                                    span.pull-right{
+                                                        span.small{
+                                                            color: @gray-dark;
+                                                        }
+                                                        span.sfm-divider{
+                                                            font-size: @font-size-xlarge;
+                                                            color: fade(@gray-dark, 50%);
+                                                        }
+                                                        i.fa.fa-2x{
+                                                            color: @gray-dark;
+                                                            &.fa-angle-right{
+                                                                color: @gray-dark;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }//accordion-toggle
+                                        }//.panel-heading.card-header
+                                        div.panel-collapse{
+                                            div.panel-body.card-block{
+                                                div.row{
+                                                        &.sfm-episode-sum-details{
+                                                            padding-top: 5px;
+                                                            padding-bottom: 5px;
+                                                            background-color: @gray-light;
+                                                            border-bottom: solid 1px lighten(@gray-medium, 20%);
+                                                            div{
+                                                                &.col-md-5{
+                                                                    border-right: solid 1px lighten(@gray-medium, 20%);
+                                                                    div.row{
+                                                                        div{
+                                                                            &.col-xs-4{
+                                                                                span{
+                                                                                    &.small{}
+                                                                                    &.sfm-episode-sum-insurance{
+                                                                                        font-size: @font-size-base;
+                                                                                        font-weight: 700;
+                                                                                    }
+                                                                                    &.sfm-episode-sum-dr{
+                                                                                        font-size: @font-size-base;
+                                                                                        font-weight: 700;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                &.col-md-7{
+                                                                    border-left: solid 1px lighten(@gray-medium, 20%);                                                             
+                                                                    div.row{
+                                                                        div{
+                                                                            &.col-xs-4,
+                                                                            &.col-xs-3,
+                                                                            &.col-xs-2{
+                                                                                span{
+                                                                                    &.small{}
+                                                                                    &.sfm-episode-sum-insurance{
+                                                                                        font-size: @font-size-base;
+                                                                                        font-weight: 700;
+                                                                                    }
+                                                                                    &.sfm-episode-sum-dr{
+                                                                                        font-size: @font-size-base;
+                                                                                        font-weight: 700;
+                                                                                    }
+                                                                                    &.pull-right{
+                                                                                        i{
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        div{
+                                                        &.col-md-9{
+                                                            div.row{
+                                                                &.sfm-comments,
+                                                                &.sfm-transactions{
+                                                                    div.col-md-12{
+                                                                        div.row{
+                                                                            div.panel-heading{//may need to change to different class since not a panel
+                                                                                padding-left: 0;
+                                                                                span{
+                                                                                    &.h3{
+                                                                                        color: @brand-primary;
+                                                                                        font-weight:700;
+                                                                                    }
+                                                                                    &.small{
+                                                                                        color: @brand-primary;
+                                                                                    }
+                                                                                }
+                                                                            }//panel-heading
+                                                                            div.table-responsive{
+                                                                                table.table.table-striped.table-condensed.table-hover{
+                                                                                    thead{
+                                                                                        tr{
+                                                                                            background-color: @gray-light;
+                                                                                            th{
+                                                                                                a{
+                                                                                                    &.text-nowrap,
+                                                                                                    &:active,
+                                                                                                    &:visited,
+                                                                                                    &:hover,
+                                                                                                    &:focus{
+                                                                                                        color: @gray-dark;
+                                                                                                        font-weight: 400;
+                                                                                                    }
+                                                                                                } 
+                                                                                                &.sfm-width-xsmall-percent{
+                                                                                                    width: @sfm-width-xsmall-percent;
+                                                                                                }
+                                                                                                &.sfm-width-small-percent{
+                                                                                                    width: @sfm-width-small-percent;
+                                                                                                }
+                                                                                                &.sfm-width-sm-md-percent{
+                                                                                                    width: @sfm-width-sm-md-percent;
+                                                                                                }
+                                                                                                &.sfm-width-sm-md-medium-percent{
+                                                                                                    width: @sfm-width-sm-md-medium-percent;
+                                                                                                }
+                                                                                                &.sfm-width-md-lg-percent{
+                                                                                                    width: @sfm-width-md-lg-percent;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    tbody{
+                                                                                        tr{
+                                                                                            &:hover{
+                                                                                                background-color: @brand-primary-light;
+                                                                                            }
+                                                                                            td{
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    tfoot{
+                                                                                        tr{
+                                                                                            td{
+                                                                                                a{
+                                                                                                    font-size: 90%;
+                                                                                                }
+                                                                                                span.small{
+                                                                                                    color: @brand-primary;
+                                                                                                }
+                                                                                            }    
+                                                                                        }
+                                                                                    }
+                                                                                }//table
+                                                                            }//div.table-responsive
+                                                                        }//row
+                                                                    }//col-md-12
+                                                                }//&sfm-transactions/sfm-comments
+                                                            }//row
+                                                        }//col-md-9
+                                                        &.col-md-3{
+                                                            //sfm-episodeFS
+                                                        }//col-md-3
+                                                    }//div(to apply columns to
+                                                }//row
+                                            }//.panel-body.card-block
+                                        }
+                                    }//panel.card.panel-default
+                                }//accordion-group
+                            }//.panel-group                            
+                        }//sfm-episode-summary row
+                    }//col-lg-12
+                }//row
+            }// close - sfm-accountDetails
+        }//row
+    }//container-fluid
+}//.sfm-wrapper

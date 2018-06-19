@@ -1,0 +1,40 @@
+﻿@import (reference) 'sfm_variables.less';
+
+ul.list-group.sfm-episodeSF {
+    margin-top: @sfm-episodeFS-list-group-margin-top;
+    li.list-group-item{
+        padding: @sfm-episodeFS-list-group-li-padding;
+        border-left: @sfm-episodeFS-list-group-li-border-left;
+        border-radius: @sfm-episodeFS-list-group-li-border-radius;
+        &:first-child{
+            border-top: @sfm-episodeFS-list-group-li-first-child-border-top;
+        }
+        &:last-child{
+            padding-top: @sfm-episodeFS-list-group-li-last-child-padding;
+            padding-right: @sfm-episodeFS-list-group-li-last-child-padding;
+            border-bottom: @sfm-episodeFS-list-group-li-last-child-border-bottom;
+            span{
+                &.sfm-balance{
+                    font-size: @font-size-h5;
+                    font-weight: @sfm-episodeFS-list-group-li-last-child-span-balance-font-weight;
+                    padding-top: @sfm-episodeFS-list-group-li-last-child-span-balance-padding-top;
+                }
+                &.pull-right.balance-line{
+                border-top: @sfm-episodeFS-list-group-li-last-child-span-balance-line-border-top;               
+                    span.sfm-balance-value{
+                        padding-right: @sfm-episodeFS-list-group-li-last-child-span-balance-value-padding;
+                        padding-top: @sfm-episodeFS-list-group-li-last-child-span-balance-value-padding;
+                    }
+                }
+            }
+        }
+        span{
+            &.sfm-episodeSF-title{
+                font-size: @font-size-base;
+            }
+            &.pull-right{
+                font-size: @font-size-large;
+            }
+        }
+    }
+}

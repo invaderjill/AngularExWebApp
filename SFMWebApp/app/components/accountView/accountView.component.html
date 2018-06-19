@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            <div class="input-group input-group-lg">
+                                <input id="accountSearchID" type="text" #search (keyup.enter)="searchClick(search.value)" class="form-control" placeholder="Enter Episode ID" [(ngModel)]='episodeUID'>
+                                <span class="input-group-btn">
+                                    <button id="accountSearchButton" class="btn btn-default" type="button" (click)="searchClick(episodeUID)"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <sfm-patients></sfm-patients>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row height100">
+        <div #col100Height class="col-md-3 col-lg-3" (window:resize)="onResize($event)">
+            <sfm-episodes></sfm-episodes>
+        </div>
+        <div class="col-md-9 col-lg-9">
+            <div [ngBusy]="{busy: busy}"></div>
+            <router-outlet></router-outlet>
+            <!--<div class="sfm-loading row" *ngIf="loading">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i> <span class="h3">Loading...</span>
+                </div>
+                <div class="col-lg-4">
+
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>

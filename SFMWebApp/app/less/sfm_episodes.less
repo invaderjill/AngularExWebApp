@@ -1,0 +1,240 @@
+﻿@import (reference) 'sfm_variables.less';
+
+div.sfm-episodes.row{//sfm-episodes
+    padding: @sfm-row-padding-margin;
+    margin: @sfm-row-padding-margin;
+    .panel-group{//accordion
+        accordion-group{
+            div.panel.card.panel-default{
+                &.isActive{
+                border: @sfm-episode-border-open;
+                div.panel-heading.card-header{
+                    background-color: @brand-primary;
+                    border-bottom: @sfm-episode-accordion-group-panel-heading-border-bottom;
+                    div.accordion-toggle{
+                        div{//accordion-heading
+                            span.h3{
+                                color: @white;
+                                padding-right: @sfm-episode-accordion-group-accordion-toggle-span-h3-padding-right;
+                            }
+                            span.small{
+                                color: @white;
+                            }
+                            span.badge{
+                                color: @brand-primary;
+                                background-color: @white;
+                            }
+                            span.pull-right{
+                                span.sfm-divider{
+                                    font-size: @font-size-xlarge;
+                                    color: @sfm-icon-white-fade;
+                                }
+                                i.fa.fa-2x{
+                                    color: @white;
+                                    &.fa-angle-left{
+                                        color: @white;
+                                    }
+                                    &.fa-times-circle{
+                                        color: @sfm-icon-white-fade;
+                                    }
+                                }
+                            }
+                        }
+                    }//accordion-toggle
+                }//panel-heading
+                 div.panel-collapse.collapse{
+                    div.panel-body.card-block{
+                        background-color: @brand-primary;
+                        div.row{
+                            div.sfm-episode-visit-details{
+                                //background-color: @white;
+                                div.row{
+                                    div.col-xs-6{
+                                        span.h4{//VisitType
+                                        }
+                                        span.h5{//from/to
+                                            em{//principle visit ID
+
+                                            }
+
+                                        }
+                                        span.pull-right{
+                                            i.fa.fa-ellipsis-h.fa-2x{
+
+                                            }
+                                        }
+                                        
+                                    }
+                                    div.col-xs-12{
+                                        span.h5{//facility/location
+
+                                        }
+                                        span.h6{
+
+                                        }
+                                    }
+                                }
+                                div.panel.card.panel-default{//related section
+                                    div.panel-heading.card-header{
+                                        span{
+                                            &.h5{
+                                            }
+                                            &.pull-right{
+                                                a{
+                                                    i{
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    div.panel-collapse.collapse{
+                                        div.panel-body.card-block{
+                                            div.panel.panel-default{
+                                                div.panel-heading {
+                                                        span.h4{
+
+                                                        }
+                                                        span.pull-right{
+                                                            i.fa.fa-angle-down.fa-2x{
+
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }//close panel-body
+                                        }//close panel-collapse
+                                    }//close panel-default
+                                }//sfm visit details
+                            }//row
+                        }//panel-body card-block
+                    }//panel-collapse
+                }//&active
+                border: @sfm-episode-border-closed;
+                div.panel-heading.card-header{
+                    background-color: @gray-lighter;
+                    div.accordion-toggle{
+                        div{//accordion-heading
+                            span.h3{
+                                color:  @gray-dark;
+                                padding-right: @sfm-episode-accordion-group-accordion-toggle-span-h3-padding-right;
+                            }
+                            span.small{
+                                    color: @gray-dark;
+                            }
+                            span.badge{
+                                color: @gray-light;
+                                background-color:  @gray-dark;
+                            }
+                            span.pull-right{
+                                span.small{
+                                    color: @gray-dark;
+                                }
+                                span.sfm-divider{
+                                    font-size: @font-size-xlarge;
+                                    color: @sfm-icon-gray-fade;
+                                }
+                                i.fa.fa-2x{
+                                    color: @gray-dark;
+                                    &.fa-angle-right{
+                                        color: @gray-dark;
+                                    }
+                                    &.fa-times-circle{
+                                        color: @sfm-icon-gray-fade;
+                                    }
+                                }
+                            }
+                        }
+                    }//accordion-toggle
+                }//.panel-heading.card-header
+                div.panel-collapse.collapse{
+                    div.panel-body.card-block{
+                        padding: @sfm-episode-accordion-group-panel-collapse-panel-body-padding;
+                        background-color: @gray-lighter;
+                        border-top: @sfm-episode-accordion-group-panel-collapse-panel-body-border-top;
+                        margin: @sfm-episode-accordion-group-panel-collapse-panel-body-margin;
+                        div.row{
+                            &.horizontal-divider{
+                                border-bottom: @sfm-episode-visit-details-horizontal-divider-border-bottom;
+                            }
+                            padding: @sfm-episode-row-padding-margin;
+                            margin: @sfm-episode-row-padding-margin;
+                            div.sfm-episode-visit-details{
+                                padding:0;
+                                border-top-left-radius: @sfm-episode-visit-details-border-radius;
+                                border-top-right-radius: @sfm-episode-visit-details-border-radius;
+                                background-color: @white;
+                                div.row{
+                                    padding: @sfm-episode-visit-details-row-padding;
+                                    &:first-child{
+                                        padding: @sfm-episode-visit-details-row-padding-first-child;
+                                    }
+                                    div.col-xs-6{
+                                        span{
+                                            &.h4{//VisitType
+                                            font-size: @sfm-episode-visit-details-col-xs-6-span-h4-font-size;
+                                            padding-left: @sfm-episode-visit-details-col-xs-6-padding;
+                                            padding-top: @sfm-episode-visit-details-col-xs-6-padding;
+                                            font-weight: @sfm-episode-visit-details-col-xs-6-span-h4-font-weight;
+                                            }
+                                            &.sfm-episode-label{
+                                                font-size: @sfm-episode-visit-details-span-label-font-size;
+                                                font-style: @sfm-episode-visit-details-span-label-font-style;
+                                            }
+                                            &.sfm-episode-section1-data{
+                                                font-size: @sfm-episode-visit-details-span-section1-data-font-size;
+                                                font-weight: @sfm-episode-visit-details-span-section1-data-font-weight;
+                                            }
+                                            &.sfm-episode-section2-data{
+                                                font-size: @sfm-episode-visit-details-span-section2-data-font-size;
+                                                font-weight: @sfm-episode-visit-details-span-section2-data-font-weight;
+                                                color: @sfm-episode-visit-details-span-section2-data-color;
+                                            }                                       
+                                        }
+                                    }
+                                }
+                                div.panel.card.panel-default{//related section
+                                    div.panel-heading.card-header{
+                                        padding: @sfm-episode-related-visit-panel-heading-padding;
+                                        margin: @sfm-episode-row-padding-margin;
+                                        background-color: @gray;
+                                        border-color: @gray;
+                                        span{
+                                            &.h5{
+                                                color: @white;
+                                            }
+                                            &.pull-right{
+                                                a{
+                                                    i{
+                                                        color: @white;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    div.panel-collapse.collapse{
+                                        div.panel-body.card-block{
+                                            div.panel.panel-default{
+                                                div.panel-heading {
+                                                        background-color: @gray;
+                                                        border-color: @gray;
+                                                        span.h4{
+
+                                                        }
+                                                        span.pull-right{
+                                                            i.fa.fa-angle-down.fa-2x{
+
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }//close panel-body
+                                        }//close panel-collapse
+                                    }//close panel-default
+                                }//sfm visit details
+                            }//row
+                        }//panel-body card-block
+                    }//panel-collapse
+                }//panel.card.panel-default
+            }//accordion-group
+        }//panel-group
+    }//sfm-episodes

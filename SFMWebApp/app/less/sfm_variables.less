@@ -1,0 +1,256 @@
+﻿//this file is imported into bootstrap - it is the sole modification in the bootstrap less files
+//serves to override variables in bootstrap and set new variables in sfm specific code
+
+@import (reference) "bootstrap/variables.less";
+
+//Base Level Variables
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          12px;// originally 14px in bootstrap
+@font-size-large:         ceil((@font-size-base * 1.25)); // bootstrap ~18px
+@font-size-medium:        ceil((@font-size-base * 1.10)); // bootstrap ~18px  
+@font-size-small:         ceil((@font-size-base * 0.85)); // bootstrap ~12px
+@font-size-xsmall:        ceil((@font-size-base * 0.75)); // 
+@font-size-xlarge:        ceil((@font-size-base * 1.7)); // same as h3 size
+
+@font-size-h1:            floor((@font-size-base * 2.6)); // bootstrap ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // bootstrap ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // bootstrap ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // bootstrap ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // bootstrap ~12px
+
+//Sizes
+@body-min-height: 100%;
+
+//Color Palette (used in conjunction with bootstrap's gray scale)
+
+@brand-primary: hsla(186, 100%, 27%, 1);
+@brand-primary-light: lighten(@brand-primary, 70%);
+
+@white: hsla(360, 100%, 100%, 1);
+@gray-light: lighten(@gray-base, 90%);
+@gray-medium: lighten(@gray-base, 50%);
+
+//Search Bar
+
+
+//Nav Shared
+@nav-link-hover-bg: @brand-primary;
+@nav-link-hover-color: @white;  // orig @gray-lighter;
+
+//Nav-Pills
+@border-radius-base:  0;
+//@component-active-bg: @brand-primary;
+//@component-active-color: #fff;
+
+@nav-pills-border-radius:                   @sfm-patient-nav-pills-border-radius;
+@nav-pills-active-link-hover-bg:            lighten(@gray-base, 80%);//@component-active-bg;
+@nav-pills-active-link-bg:                  lighten(@gray-dark, 10%);
+@nav-pills-active-link-hover-color:         @gray;//@component-active-color;
+
+//== Panels
+//
+//##
+
+@panel-bg:                    @white;
+@panel-body-padding:          0;
+@panel-heading-padding:       10px 15px;
+@panel-footer-padding:        @panel-heading-padding;
+@panel-border-radius:         @border-radius-base;
+
+//** Border color for elements within panels
+@panel-inner-border:          #ddd;
+@panel-footer-bg:             #f5f5f5;
+
+@panel-default-text:          @gray-dark;
+@panel-default-border:        #ddd;
+@panel-default-heading-bg:    #f5f5f5;
+
+@panel-primary-text:          @white;
+@panel-primary-border:        @brand-primary;
+@panel-primary-heading-bg:    @brand-primary;
+
+@panel-success-text:          @state-success-text;
+@panel-success-border:        @state-success-border;
+@panel-success-heading-bg:    @state-success-bg;
+
+@panel-info-text:             @state-info-text;
+@panel-info-border:           @state-info-border;
+@panel-info-heading-bg:       @state-info-bg;
+
+@panel-warning-text:          @state-warning-text;
+@panel-warning-border:        @state-warning-border;
+@panel-warning-heading-bg:    @state-warning-bg;
+
+@panel-danger-text:           @state-danger-text;
+@panel-danger-border:         @state-danger-border;
+@panel-danger-heading-bg:     @state-danger-bg;
+
+//SFM Specific Variables
+
+//Width Sizes
+
+@sfm-width-xsmall-percent: 5%;
+@sfm-width-small-percent: 10%;
+@sfm-width-sm-md-percent: 15%;
+@sfm-width-sm-md-medium-percent: 20%;
+@sfm-width-medium-percent: 25%;
+@sfm-width-md-lg-percent: 30%;
+@sfm-width-large-percent: 40%;
+@sfm-width-xlarge-percent: 50%;
+
+//Padding/Margin General
+@sfm-row-padding-margin: 0;
+
+//Icon Colors
+
+@sfm-icon-white-fade: fade(@white, 50%);
+@sfm-icon-gray-fade: fade(@gray-dark, 50%);
+
+//Panel Heading
+
+@sfm-margin-top: 200px;
+@sfm-margin-left-right-search: -15px;
+@sfm-panel-heading-icon-padding-left: 5px;
+
+//Wrapper
+@sfm-wrapper-panel-default-padding: 5px;
+@sfm-wrapper-panel-background-color: lighten(@gray-medium, 30%);
+@sfm-wrapper-panel-bottom-border: solid 3px @brand-primary;
+@sfm-wrapper-row-col-mdlg-3-bg-color: lighten(@gray-base, 80%);
+
+@sfm-wrapper-search-icon-size: 2em;
+
+//Patient - Nav Pills
+@sfm-patient-nav-pill-size: 280px;
+@sfm-patient-nav-pills-border-radius: 10px;
+@sfm-patient-nav-pills-border: solid 2px lighten(@gray-medium, 10%);
+@sfm-patient-nav-pills-background-color: lighten(@gray-medium, 40%);
+@sfm-patient-nav-pills-focus-border: solid 2px @white;
+@sfm-patient-nav-pills-hover-background-color: lighten(@gray-medium, 50%);
+
+//Episode - Accordion Group
+@sfm-episode-column-min-height: 100%;
+@sfm-episode-row-padding-margin: 0;
+@sfm-episode-border-closed: solid 1px lighten(@gray-medium, 10%);
+@sfm-episode-border-open: none;
+@sfm-episode-accordion-group-panel-heading-border-bottom: none;
+@sfm-episode-accordion-group-accordion-toggle-span-h3-padding-right: 10px;
+@sfm-episode-accordion-group-panel-collapse-panel-body-padding: 0 5px 5px 5px;
+@sfm-episode-accordion-group-panel-collapse-panel-body-border-top: none;
+@sfm-episode-accordion-group-panel-collapse-panel-body-margin: 0;
+@sfm-episode-visit-details-horizontal-divider-border-bottom: solid 1px lighten(@gray-medium, 20%);
+@sfm-episode-visit-details-border-radius: 10px;
+@sfm-episode-visit-details-row-padding: 2px 5px;
+@sfm-episode-visit-details-row-padding-first-child: 10px 5px 2px 5px;
+@sfm-episode-visit-details-col-xs-6-padding: 5px 10px;
+@sfm-episode-visit-details-col-xs-6-span-h4-font-size: 140%;
+@sfm-episode-visit-details-col-xs-12-padding:10px;
+@sfm-episode-related-visit-panel-heading-padding: 5px 10px 2px 10px;
+@sfm-episode-visit-details-col-xs-6-span-h4-font-weight: 800;
+@sfm-episode-visit-details-span-label-font-size: @font-size-small;
+@sfm-episode-visit-details-span-label-font-style: italic;
+@sfm-episode-visit-details-span-section1-data-font-weight: 800;
+@sfm-episode-visit-details-span-section1-data-font-size: @font-size-h4;
+@sfm-episode-visit-details-span-section2-data-font-weight: 700;
+@sfm-episode-visit-details-span-section2-data-font-size: @font-size-medium;
+@sfm-episode-visit-details-span-section2-data-color: @gray-medium;
+
+//EpisodeBanner - panels, nav tabs
+
+//Episode Banner
+@trapezoid-border: rgba(0,0,0,0);
+@sfm-episode-banner-height: 60px;
+@sfm-episode-banner-margin: 0;
+@sfm-episode-banner-border: solid 5px @gray-darker;
+@sfm-episode-banner-margin-left: -2px;
+@sfm-episode-banner-bottom: 0;
+@sfm-episode-banner-border-gray-darker: 10px solid @gray-darker;
+@sfm-episode-banner-border-white: 10px solid @white;
+@sfm-episode-banner-position: absolute;
+@sfm-episode-banner-fa-margin-top: -10px;
+@sfm-episode-banner-panel-default-expand-margin: -2px;
+@sfm-episode-banner-header-md-7-background-image: linear-gradient(to top, @gray-dark, @gray-medium); 
+@sfm-episode-banner-header-md-5-background-image: linear-gradient(to bottom, lighten(@gray-base, 5%), @gray-dark); 
+@sfm-episode-banner-font-style: italic;
+@sfm-episode-banner-display: block;
+@sfm-episode-banner-row-text-align-border: solid 2px @gray-medium;
+@sfm-episode-banner-expand-width: 0;
+@sfm-episode-banner-panel-border: none;
+@sfm-episode-banner-status-bg-color: hsla(84, 100%, 45%, 1.0);
+
+
+
+//EpisodeSummary - Accordion Group
+@sfm-episode-summary-row-padding: 10px;
+@sfm-episode-summary-border-closed: solid 1px lighten(@gray-medium, 10%);
+@sfm-episode-summary-border-open: none;
+@sfm-episode-summary-sfm-divider-padding-top: -5px;//not valid
+
+@sfm-episode-summary-details-padding: 5px;
+@sfm-episode-summary-details-border: solid 2px lighten(@gray-medium, 20%);
+@sfm-episode-summary-details-span-bigger-font-weight: 700;
+
+
+
+//Datatable
+@sfm-datatable-bold-font-weight: 700;
+@sfm-datatable-header-padding-left: 0;
+@sfm-datatable-header-padding-span-h3-font-weight: 700;
+
+@sfm-datatable-table-responsive-thead-focus-font-weight: 400;
+@sfm-datatable-table-responsive-tfoot-a-font-size: 90%;
+@sfm-datatable-td-white-space: nowrap;
+@sfm-datatable-td-overflow: hidden;
+@sfm-datatable-td-text-overflow: ellipsis;
+@sfm-datatable-td-max-width-md-lg-col: 300px;
+
+//EpisodeFS - List Group
+
+@sfm-episodeFS-list-group-margin-top: 40px;
+
+@sfm-episodeFS-list-group-li-padding: 4px;
+@sfm-episodeFS-list-group-li-border-left: none;
+@sfm-episodeFS-list-group-li-border-radius: @border-radius-base;
+
+@sfm-episodeFS-list-group-li-first-child-border-top: none;
+
+@sfm-episodeFS-list-group-li-last-child-border-bottom: none;
+@sfm-episodeFS-list-group-li-last-child-padding: 0;
+@sfm-episodeFS-list-group-li-last-child-span-balance-font-weight: 700;
+@sfm-episodeFS-list-group-li-last-child-span-balance-padding-top: 6px;
+@sfm-episodeFS-list-group-li-last-child-span-balance-line-border-top: double 3px @gray-dark;
+@sfm-episodeFS-list-group-li-last-child-span-balance-value-padding: 4px;
+
+//Transactions - v2 (Large Data Grid with Virtualization)
+@sfm-transactions-v2-height: 400px;
+@sfm-transactions-v2-width: 845px;
+
+@sfm-transactions-v2-header-font-size: @font-size-h3;
+@sfm-transactions-v2-header-color: @brand-primary;
+@sfm-transactions-v2-header-font-weight: @sfm-datatable-header-padding-span-h3-font-weight;
+@sfm-transactions-v2-header-padding-top: 10px;
+@sfm-transactions-v2-header-padding-bottom: 10px;
+@sfm-transactions-v2-header-span-small-font-size: @font-size-small;
+@sfm-transactions-v2-header-span-small-color: @brand-primary;
+
+@sfm-transactions-v2-ag-bootstrap-div-height: 300px;
+@sfm-transactions-v2-ag-bootstrap-div-width: 100%;
+
+@sfm-transactions-v2-ag-header-border-bottom: solid 1px lighten(@gray-medium, 30%);
+@sfm-transactions-v2-ag-header-cell-text-align: left;
+@sfm-transactions-v2-ag-header-cell-label-padding: 5px;
+@sfm-transactions-v2-ag-row-border-bottom: solid 1px lighten(@gray-medium, 30%);
+@sfm-transactions-v2-ag-row-hover-bg-color: @brand-primary-light;
+
+
+
+
+
+

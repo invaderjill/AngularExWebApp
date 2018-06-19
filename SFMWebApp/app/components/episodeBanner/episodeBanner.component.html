@@ -1,0 +1,206 @@
+﻿<div class="sfm-episode-banner row" *ngIf="episodeBanner && episodeBanner.episodeID">
+    <div class="panel panel-default sfm-episode-banner">
+        <div class="panel-heading">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <span class="sfm-episode-banner-patient-name">
+                            {{episodeBanner.patientLastName | uppercase}} ,
+                            {{episodeBanner.patientFirstName}}
+                            <span *ngIf="episodeBanner.patientMiddleName">{{episodeBanner.patientMiddleName}}.</span>
+                            <span *ngIf="episodeBanner.patientTitle">({{episodeBanner.patientTitle | uppercase}}.)</span>
+                         </span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="sfm-episode-banner-label">MRN</span> ---<br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <span class="sfm-episode-banner-label">DOB </span> {{episodeBanner.patientDOB | date:'yMMMd'}} ({{episodeBanner.patientAge}}) | {{episodeBanner.patientGender}}
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="sfm-episode-banner-label">Patient ID </span>{{episodeBanner.patientID}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="sfm-episode-banner-header-right-section">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Payers {{episodeBanner.insurancePlanNames}}
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="pull-right">
+                                <div class="sfm-episode-banner-status">{{episodeBanner.episodeStatus | uppercase}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <span class="sfm-episode-banner-label">Class </span>{{episodeBanner.episodeFinancialClass}}
+                        </div>
+                        <div class="col-xs-6">
+                            <span class="pull-right">
+                                <span class="sfm-episode-banner-label">Balance </span>{{episodeBanner.episodeBalance | currency:'USD':true:'1.2-2'}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div [ngBusy]="busy"></div>
+        <div class="panel-collapse" [@expandedState]="expandedState">
+            <div class="panel-body">
+                <div class="row">
+                    <tabset>
+                        <tab heading="Visit Info">
+                                <div *ngIf="canViewVisitDemographics && episodeBannerVisitDemographics && episodeBannerVisitDemographics.AdmitOn" id="vstDemographics" class="sfm-episode-banner-visit-demographics row">
+                                    <!--Generate id's and class for presenting correct tab for selection-->
+                                    <div class="sfm-episode-banner-vst-dem-section-1">
+                                        <div class="sfm-episode-banner-visit-demo-row row">
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Admit On</span><br />
+                                                <span class="sfm-episode-banner-data">{{episodeBannerVisitDemographics.AdmitOn | date:'yMMMd'}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Care Level</span><br />
+                                                <span>{{episodeBannerVisitDemographics.CareLevel}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Visit Privacy Status</span><br />
+                                                <span>{{episodeBannerVisitDemographics.VisitPrivacyStatus}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Scanned Images</span><br />
+                                                <span>---</span>
+                                            </div>
+                                        </div>
+                                        <div class="sfm-episode-banner-visit-demo-row row">
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Admit Type</span><br />
+                                                <span>{{episodeBannerVisitDemographics.AdmitType}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Service</span><br />
+                                                <span>{{episodeBannerVisitDemographics.Service}}</span>
+                                            </div>
+                                            <div class="col-xs-3 col-xs-offset-3">
+                                                <span class="sfm-episode-banner-label">Confidential</span><br />
+                                                <span>{{episodeBannerVisitDemographics.Confidential ? 'Yes' : 'No'}}</span>
+                                            </div>
+                                            <div class="col-xs-offset-3"></div>
+                                        </div>
+                                        <div class="sfm-episode-banner-visit-demo-row row">
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Admit Source</span><br />
+                                                <span>{{episodeBannerVisitDemographics.AdmitSource}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">LOS</span><br />
+                                                <span>{{episodeBannerVisitDemographics.LOS}}</span>
+                                            </div>
+                                            <div class="col-xs-offset-6"></div>
+                                        </div>
+                                        <div class="sfm-episode-banner-visit-demo-row row">
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Admit Via</span><br />
+                                                <span>---</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Chart Group</span><br />
+                                                <span>{{episodeBannerVisitDemographics.ChartGroup}}</span>
+                                            </div>
+                                            <div class="col-xs-offset-6"></div>
+                                        </div>
+                                    </div>
+                                    <div class="sfm-episode-banner-vst-dem-section-2 horizontal-separator">
+                                        <div class="sfm-episode-banner-visit-demo-row row">
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Complaint</span><br />
+                                                <span>{{episodeBannerVisitDemographics.Complaint}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Onset / Illness On</span><br />
+                                                <span>{{episodeBannerVisitDemographics.OnsetIllnessOn}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">EDC</span><br />
+                                                <span>---</span>
+                                            </div>
+                                            <div class="col-xs-offset-3"></div>
+                                        </div>
+                                        <div class="sfm-episode-banner-visit-demo-row row">
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Accident Related</span><br />
+                                                <span>{{episodeBannerVisitDemographics.AccidentalRelated ? 'Yes' : 'No'}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Onset / Illness Treated On</span><br />
+                                                <span>{{episodeBannerVisitDemographics.OnsetIllnessTreatedOn}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">LMC</span><br />
+                                                <span>---</span>
+                                            </div>
+                                            <div class="col-xs-offset-3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="sfm-episode-banner-vst-dem-section-3 horizontal-separator">
+                                        <div class="sfm-episode-banner-visit-demo-row row">
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Referring Provider</span><br />
+                                                <span>{{episodeBannerVisitDemographics.ReferringProvider}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Admitting Provider</span><br />
+                                                <span>{{episodeBannerVisitDemographics.AdmittingProvider}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Attending Provider</span><br />
+                                                <span>{{episodeBannerVisitDemographics.AttendingProvider}}</span>
+                                            </div>
+                                            <div class="col-xs-offset-3"></div>
+                                        </div>
+                                        <div class="sfm-episode-banner-visit-demo-row row">
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">ReferredFrom</span><br />
+                                                <span>{{episodeBannerVisitDemographics.ReferredFrom}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">
+                                                    Mode Of Arrival
+                                                </span><br />
+                                                <span>{{episodeBannerVisitDemographics.ModeOfArrival}}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="sfm-episode-banner-label">Source Of Id /</span><br />
+                                                <span>{{episodeBannerVisitDemographics.SourceOfId}}</span>
+                                            </div>
+                                            <div class="col-xs-offset-3"></div>
+                                        </div>
+                                    </div>
+                                </div><!--pt demographics div-->
+                        </tab>
+                        <tab heading="Patient Demographics"></tab>
+                        <tab heading="Location"></tab>
+                        <tab heading="Insurance"></tab>
+                        <tab heading="ID Generation"></tab>
+                    </tabset>
+                </div>               
+            </div><!--panel-body-->
+        </div><!--panel-collapse-->
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="trapezoid centered">
+                        <a role="button" (click)="toggleExpandedState()">
+                            <i class="fa fa-2x" [ngClass]="{'fa-angle-up' : expanded, 'fa-angle-down' : !expanded }"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>            
+        </div><!--[ngClass]="{hide: isON}"-->
+    </div>
+    <div class="panel panel-default sfm-episode-banner-hidden-spacer"></div>
+</div><!--end sfm-episodeBanner row-->

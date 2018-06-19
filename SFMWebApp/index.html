@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <base href="/" />
+    <title>SFM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="favicon.png" />
+
+    <link rel="stylesheet" href="assets/styles/ng2-bootstrap-style.css" />
+    <link rel="stylesheet" href="assets/styles/prettify-angulario.css" />
+    <link rel="stylesheet" href="/node_modules/angular2-busy/build/style/busy.css">
+    <link href="assets/styles/styles.css" rel="stylesheet" />
+
+    <!--these specific stylesheets will be removed upon deployment - for dev debugging-->
+    <link href="assets/styles/sfm_base.css" rel="stylesheet" />
+    <link href="assets/styles/sfm_wrapper.css" rel="stylesheet" />
+    <link href="assets/styles/sfm_patients.css" rel="stylesheet" />
+    <link href="assets/styles/sfm_episodes.css" rel="stylesheet" />
+    <link href="assets/styles/sfm_episode_banner.css" rel="stylesheet" />
+    <link href="assets/styles/sfm_episode_summary.css" rel="stylesheet" />
+    <link href="assets/styles/sfm_datatable.css" rel="stylesheet" />
+    <link href="assets/styles/sfm_episodeFS.css" rel="stylesheet" />
+    <link href="assets/styles/sfm_ag_grid.css" rel="stylesheet" />
+
+    <!--Bootstrap JS Scripts-->
+    <script src="node_modules/jQuery/dist/jquery.min.js"></script>
+    <!--<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/web-animations-js/web-animations.min.js"></script>
+
+    <!-- Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function (err) { console.error(err); });
+    </script>
+    <script type="text/javascript">
+        var searchGUID;
+        function EclipsysGateway_ContextChanged(contextJSON, publishOption) {
+            var context = JSON.parse(contextJSON);
+            if (context.ContextType == "1") {
+                searchGUID = "P" + context.ClientGUID;
+            }
+            else if (context.ContextType == "3") {
+                searchGUID = "V" + context.VisitGUID;
+            }
+            else {
+                return;
+            }
+            document.getElementById("accountSearchID").value = searchGUID;
+            document.getElementById("accountSearchButton").click();
+        }
+    </script>
+</head>
+
+<body class="sfm-wrapper">
+    <sfm-app>
+        <div class="container-fluid">
+            <div class="sfm-loading row">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i> <span class="h3">Loading...</span>
+                </div>
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+        </div>
+    </sfm-app>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<div class="sfm-patients">
+    <ul *ngIf='patients && patients.length' class="nav nav-pills">
+        <li *ngFor='let patient of patients; let i = index' role="presentation" [tooltip]="toolTipTemplate" placement="bottom">
+            <template #toolTipTemplate>{{patient.patientLastName | uppercase}}, {{patient.patientFirstName}}<span *ngIf="patient.patientMiddleName">, {{patient.patientMiddleName}}</span><span *ngIf="patient.patientTitle">, ({{patient.patientTitle}})</span></template>
+            <a class="clearfix" href="javascript:void(0)" [ngClass]="{'isActive' : patient.isActive === true}">
+                <span class="h3" (click)="changePatientSelection(i)" role="button">
+                    <!--<span class="badge">{{patient.patientNumOfEpisodes}}</span>-->
+                    {{patient.patientLabel}}
+                </span>
+                <span class="pull-right">
+                    <span class="sfm-divider">&nbsp;|&nbsp;</span>
+                    <span role="button" (click)="close(i)"><i class="fa fa-times-circle fa-2x"></i></span>
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>

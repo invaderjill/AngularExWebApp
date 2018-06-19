@@ -1,0 +1,50 @@
+﻿[
+    {
+        "outputFile": "assets/styles/styles.css",
+        "inputFile": "app/less/styles.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_base.css",
+        "inputFile": "app/less/sfm_base.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_wrapper.css",
+        "inputFile": "app/less/sfm_wrapper.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_patients.css",
+        "inputFile": "app/less/sfm_patients.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_episodes.css",
+        "inputFile": "app/less/sfm_episodes.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_episode_banner.css",
+        "inputFile": "app/less/sfm_episode_banner.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_episode_summary.css",
+        "inputFile": "app/less/sfm_episode_summary.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_datatable.css",
+        "inputFile": "app/less/sfm_datatable.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_episodeFS.css",
+        "inputFile": "app/less/sfm_episodeFS.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_comments.css",
+        "inputFile": "app/less/sfm_comments.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_transactions.css",
+        "inputFile": "app/less/sfm_transactions.less"
+    },
+    {
+        "outputFile": "assets/styles/sfm_ag_grid.css",
+        "inputFile": "app/less/sfm_ag_grid.less"
+    }
+]

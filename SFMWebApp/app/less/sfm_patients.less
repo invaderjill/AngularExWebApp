@@ -1,0 +1,59 @@
+﻿@import (reference) 'sfm_variables.less';
+
+div.sfm-patients{
+    ul.nav{
+        > li,
+        &.nav-pills ul{
+            width: @sfm-patient-nav-pill-size;
+            > a{
+                border: @sfm-patient-nav-pills-border;
+                background-color: @sfm-patient-nav-pills-background-color;
+                width: @sfm-patient-nav-pill-size;
+                &:active,
+                &:focus,
+                &.isActive{
+                    background-color: @nav-pills-active-link-bg;
+                    border: @sfm-patient-nav-pills-focus-border;
+                    color: @white;
+                        span.h3{
+                        color:  @white;
+                    }
+                        span.sfm-divider{
+                            font-size: @font-size-xlarge;
+                            color: @sfm-icon-white-fade;
+                        }
+                    i.fa.fa-times-circle.fa-2x{
+                        color: @sfm-icon-white-fade;
+                    }
+                }
+                &:hover{
+                    border: @sfm-patient-nav-pills-border;
+                    background-color: @sfm-patient-nav-pills-hover-background-color;
+                    span.h3{
+                        color: @gray-medium;
+                    }
+                    span.sfm-divider{
+                    color: @sfm-icon-gray-fade;
+                    }
+                    i.fa.fa-times-circle.fa-2x{
+                        color: @sfm-icon-gray-fade;
+                    }
+                }
+                &:visited{
+                                                    
+                }
+                span.h3{
+                    width: @sfm-patient-nav-pill-size;
+                    color: @gray-medium;
+                }
+                span.sfm-divider{
+                    font-size: @font-size-xlarge;
+                    color: @sfm-icon-gray-fade;
+                }
+                i.fa.fa-times-circle.fa-2x{
+                    color: @sfm-icon-gray-fade;
+                }
+            }//a
+        }
+    }//ul.nav-pills
+}//div.sfm-patients

@@ -1,0 +1,90 @@
+﻿//should be refactored so not sfm comment/transaction specific
+@import (reference) 'sfm_variables.less';
+
+div.row{
+    &.sfm-comments,
+    &.sfm-transactions{
+        padding: @sfm-row-padding-margin;
+        margin: @sfm-row-padding-margin;
+        div.col-md-12.sfm-datatable{
+            div.row{
+                div.panel-heading{//may need to change to different class since not a panel
+                    padding-left: @sfm-datatable-header-padding-left;
+                    span{
+                        &.h3{
+                            color: @brand-primary;
+                            font-weight: @sfm-datatable-header-padding-span-h3-font-weight;
+                        }
+                        &.small{
+                            color: @brand-primary;
+                        }
+                    }
+                }//panel-heading
+                div.table-responsive{
+                    table.table.table-striped.table-condensed.table-hover{
+                        thead{
+                            tr{
+                                background-color: @gray-light;
+                                th{
+                                    a{
+                                        &.text-nowrap,
+                                        &:active,
+                                        &:visited,
+                                        &:hover,
+                                        &:focus{
+                                            color: @gray-dark;
+                                            font-weight: @sfm-datatable-table-responsive-thead-focus-font-weight;
+                                        }
+                                    } 
+                                    &.sfm-width-xsmall-percent{
+                                        width: @sfm-width-xsmall-percent;
+                                    }
+                                    &.sfm-width-small-percent{
+                                        width: @sfm-width-small-percent;
+                                    }
+                                    &.sfm-width-sm-md-percent{
+                                        width: @sfm-width-sm-md-percent;
+                                    }
+                                    &.sfm-width-sm-md-medium-percent{
+                                        width: @sfm-width-sm-md-medium-percent;
+                                    }
+                                    &.sfm-width-md-lg-percent{
+                                        width: @sfm-width-md-lg-percent;
+                                    }
+                                }
+                            }
+                        }
+                        tbody{
+                            tr{
+                                &:hover{
+                                    background-color: @brand-primary-light;
+                                }
+                                td{
+                                    white-space: @sfm-datatable-td-white-space;
+                                    overflow: @sfm-datatable-td-overflow;
+                                    text-overflow: @sfm-datatable-td-text-overflow;
+                                    max-width: @sfm-datatable-td-max-width-md-lg-col;
+                                    &.sfm-datatable-bold{
+                                    font-weight: @sfm-datatable-bold-font-weight;
+                                    }
+                                }
+                            }
+                        }
+                        tfoot{
+                            tr{
+                                td{
+                                    a{
+                                        font-size: @sfm-datatable-table-responsive-tfoot-a-font-size;
+                                    }
+                                    span.small{
+                                        color: @brand-primary;
+                                    }
+                                }    
+                            }
+                        }
+                    }//table
+                }//div.table-responsive
+            }//row
+        }//col-md-12
+    }//&sfm-transactions/sfm-comments
+}//row

@@ -1,0 +1,115 @@
+<div class="sfm-episodes row" *ngIf='episodeItemArray && episodeItemArray.length'>
+    <accordion [closeOthers]="false">
+        <accordion-group #group *ngFor='let episodeItem of episodeItemArray; let i = index' isDisabled="true" isOpen="true" [headingClass]="headingClass" [isActive]='episodeItem.isActive'>
+            <div accordion-heading (click)="episodeChanged(i)">
+                <span class="h3">
+                    Episode {{episodeItem.episodeReceivableAssetUID}}
+                </span>
+                &nbsp;&nbsp;<span class="small">Visits:</span>&nbsp;
+                <span class="badge">{{episodeItem.relatedVisits?.length + 1}}</span>
+                <span class="pull-right">
+                    <i class="fa fa-times-circle fa-2x" (click)="close()"></i>
+                    <!--<span class="sfm-divider">
+                        &nbsp;|&nbsp;
+                    </span>
+                    <a href='' role="button" aria-expanded="true"><i class="fa fa-2x" [ngClass]="{'fa-angle-left' : group?.isOpen, 'fa-angle-right' : !group?.isOpen }"></i></a>-->
+                </span>
+            </div>
+            <div class="row">
+                <div class="sfm-episode-visit-details">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <span class="h4">{{episodeItem.principalVisitType}}</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <span class="pull-right">
+                                <span class="sfm-episode-label">From </span>
+                                <span class="sfm-episode-section1-data">
+                                    {{episodeItem?.principalVisitAdmitDate | date:'yMMMd'}}
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row horizontal-divider">
+                        <div class="col-xs-6">
+                            <span class="sfm-episode-label">Principle Visit ID</span>
+                            <span class="sfm-episode-section1-data">{{episodeItem.principalVisitIDCode}}</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <span class="pull-right">
+                                <span class="sfm-episode-label">To </span>
+                                <span class="sfm-episode-section1-data">{{episodeItem?.principalVisitDischargeDate | date:'yMMMd'}}</span>
+                            </span>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <span class="sfm-episode-label">Facility </span><br />
+                        </div>
+                        <div class="col-xs-6">
+                            <span class="pull-right">
+                                <span class="sfm-episode-label">Location </span><br />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <span class="sfm-episode-section2-data">{{episodeItem.principalVisitFacility}}</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <span class="pull-right">
+                                <span class="sfm-episode-section2-data">{{episodeItem.principalVisitLocation}}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-offset-6 col-xs-6">
+                            <span class="pull-right">
+                                <i class="fa fa-ellipsis-h fa-2x"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div #related class="panel card panel-default" *ngIf='episodeItem.relatedVisits && episodeItem.relatedVisits.length'>
+                        <div class="panel-heading card-header">
+                            <span class="h5">RELATED</span>
+                            <span class="pull-right">
+                                <a href="" role="button">
+                                    <i class="fa fa-angle-down fa-lg"></i> <!--(click)="toggleOpen($event)" [ngClass]="{'fa-angle-up' : isOpen, 'fa-angle-down' : !isOpen }"-->
+                                </a>
+                            </span>
+                        </div>
+                        <div class="panel-collapse collapse">
+                            <!--[collapse]="!isOpen" (expanded)="expanded($event)" (collapsed)="collapsed($event)" [@expandedState]="expandedState"-->
+                            <div class="panel-body card-block">
+                                <div class="row" *ngFor='let relatedVisit of episodeItem.relatedVisits;'>
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-xs-7">
+                                                <span>1</span>|<span>{{relatedVisit.visitType}}</span><br />
+                                                <span>Visit ID: </span><span>{{relatedVisit.visitIDCode}}</span>
+                                            </div>
+                                            <div class="col-xs-5">
+                                                <span>From: {{relatedVisit?.admitDate | date:'yMMMd'}}</span><br />
+                                                <span>To: {{relatedVisit?.dischargeDate | date:'yMMMd'}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-7">
+                                                <span>Facility</span><br />
+                                                <span>{{relatedVisit.visitFacility}}</span><br />
+                                            </div>
+                                            <div class="col-xs-5">
+                                                <span>Location</span><br />
+                                                <span>{{relatedVisit.visitLocation}}</span><br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--sfm-episode-visit-details-->
+            </div><!--row-->
+        </accordion-group><!--accordion-group-->
+    </accordion><!--accordion-->
+</div><!--sfm-episode-->

@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>SFMWebApp</Name>
+    <RootNamespace>SFMWebApp</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>232cda7b-1537-4d56-985f-21bf12b5954d</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.ts</StartupFile>
+    <StartWebBrowser>True</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ProjectFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <EnableTypeScript>true</EnableTypeScript>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\common\accordion\accordion-group.component.ts" />
+    <TypeScriptCompile Include="app\common\accordion\accordion.component.ts" />
+    <TypeScriptCompile Include="app\common\accordion\accordion.config.ts" />
+    <TypeScriptCompile Include="app\common\accordion\accordion.module.ts" />
+    <TypeScriptCompile Include="app\common\accordion\index.ts" />
+    <TypeScriptCompile Include="app\common\agGrid\currency.component.ts" />
+    <TypeScriptCompile Include="app\common\agGrid\date.component.ts" />
+    <TypeScriptCompile Include="app\common\agGrid\ellipsis.component.ts" />
+    <TypeScriptCompile Include="app\common\authorizationStore.ts" />
+    <TypeScriptCompile Include="app\common\collapse\collapse.directive.ts" />
+    <TypeScriptCompile Include="app\common\collapse\collapse.module.ts" />
+    <TypeScriptCompile Include="app\common\collapse\index.ts" />
+    <TypeScriptCompile Include="app\common\component-loader\component-loader.class.ts" />
+    <TypeScriptCompile Include="app\common\component-loader\component-loader.factory.ts" />
+    <TypeScriptCompile Include="app\common\component-loader\content-ref.class.ts" />
+    <TypeScriptCompile Include="app\common\component-loader\index.ts" />
+    <TypeScriptCompile Include="app\common\constants\common.constants.ts" />
+    <TypeScriptCompile Include="app\common\accountStateStore.ts" />
+    <TypeScriptCompile Include="app\common\datagrid\datagrid.component.ts" />
+    <TypeScriptCompile Include="app\common\datagrid\dataGridProperty.ts" />
+    <TypeScriptCompile Include="app\common\dropdown\dropdown-keyboard-nav.directive.ts" />
+    <TypeScriptCompile Include="app\common\dropdown\dropdown-menu.directive.ts" />
+    <TypeScriptCompile Include="app\common\dropdown\dropdown-toggle.directive.ts" />
+    <TypeScriptCompile Include="app\common\dropdown\dropdown.config.ts" />
+    <TypeScriptCompile Include="app\common\dropdown\dropdown.directive.ts" />
+    <TypeScriptCompile Include="app\common\dropdown\dropdown.interfaces.ts" />
+    <TypeScriptCompile Include="app\common\dropdown\dropdown.module.ts" />
+    <TypeScriptCompile Include="app\common\dropdown\dropdown.service.ts" />
+    <TypeScriptCompile Include="app\common\dropdown\index.ts" />
+    <TypeScriptCompile Include="app\common\httpClient.ts" />
+    <TypeScriptCompile Include="app\common\loading\loading.component.ts" />
+    <TypeScriptCompile Include="app\common\loading\loading.module.ts" />
+    <TypeScriptCompile Include="app\common\loading\loading.service.ts" />
+    <TypeScriptCompile Include="app\common\modal\index.ts" />
+    <TypeScriptCompile Include="app\common\modal\modal-backdrop.component.ts" />
+    <TypeScriptCompile Include="app\common\modal\modal-options.class.ts" />
+    <TypeScriptCompile Include="app\common\modal\modal.component.ts" />
+    <TypeScriptCompile Include="app\common\modal\modal.module.ts" />
+    <TypeScriptCompile Include="app\common\positioning\index.ts" />
+    <TypeScriptCompile Include="app\common\positioning\ng-positioning.ts" />
+    <TypeScriptCompile Include="app\common\positioning\positioning.service.ts" />
+    <TypeScriptCompile Include="app\common\tabs\index.ts" />
+    <TypeScriptCompile Include="app\common\tabs\ng-transclude.directive.ts" />
+    <TypeScriptCompile Include="app\common\tabs\tab-heading.directive.ts" />
+    <TypeScriptCompile Include="app\common\tabs\tab.directive.ts" />
+    <TypeScriptCompile Include="app\common\tabs\tabs.module.ts" />
+    <TypeScriptCompile Include="app\common\tabs\tabset.component.ts" />
+    <TypeScriptCompile Include="app\common\tabs\tabset.config.ts" />
+    <TypeScriptCompile Include="app\common\tooltip\index.ts" />
+    <TypeScriptCompile Include="app\common\tooltip\tooltip-container.component.ts" />
+    <TypeScriptCompile Include="app\common\tooltip\tooltip-options.class.ts" />
+    <TypeScriptCompile Include="app\common\tooltip\tooltip.config.ts" />
+    <TypeScriptCompile Include="app\common\tooltip\tooltip.directive.ts" />
+    <TypeScriptCompile Include="app\common\tooltip\tooltip.module.ts" />
+    <TypeScriptCompile Include="app\common\utils\decorators.ts" />
+    <TypeScriptCompile Include="app\common\utils\index.ts" />
+    <TypeScriptCompile Include="app\common\utils\linked-list.class.ts" />
+    <TypeScriptCompile Include="app\common\utils\ng2-bootstrap-config.ts" />
+    <TypeScriptCompile Include="app\common\utils\trigger.class.ts" />
+    <TypeScriptCompile Include="app\common\utils\triggers.ts" />
+    <TypeScriptCompile Include="app\common\utils\utils.class.ts" />
+    <TypeScriptCompile Include="app\components\accountView\accountView-guard.service.ts" />
+    <TypeScriptCompile Include="app\components\accountView\patientAccountDetail.ts" />
+    <TypeScriptCompile Include="app\components\login\login.component.ts" />
+    <TypeScriptCompile Include="app\components\transactionV2\transactionV2.component.ts" />
+    <TypeScriptCompile Include="app\components\authentication\authentication.component.ts" />
+    <TypeScriptCompile Include="app\components\authentication\authentication.service.ts" />
+    <TypeScriptCompile Include="app\components\authentication\authentication.ts" />
+    <TypeScriptCompile Include="app\components\comment\comment.service.ts" />
+    <TypeScriptCompile Include="app\components\episodeBanner\episodeBanner.service.ts" />
+    <TypeScriptCompile Include="app\components\episodeBanner\episodeBannerVisitDemographics.ts" />
+    <TypeScriptCompile Include="app\components\episodeSummary\episodeSummary.service.ts" />
+    <TypeScriptCompile Include="app\components\episode\episode.service.ts" />
+    <TypeScriptCompile Include="app\components\episode\episodeItem.ts" />
+    <TypeScriptCompile Include="app\components\patient\patient.service.ts" />
+    <TypeScriptCompile Include="app\components\patient\patientItem.ts" />
+    <TypeScriptCompile Include="app\common\helper\providerHelper.ts" />
+    <TypeScriptCompile Include="app\components\transaction\transaction.service.ts" />
+    <TypeScriptCompile Include="app\components\unbilled\unbilled.service.ts" />
+    <TypeScriptCompile Include="app\enum\accountDetailPanel.ts" />
+    <TypeScriptCompile Include="app\common\accountState.ts" />
+    <TypeScriptCompile Include="app\common\logging.ts" />
+    <TypeScriptCompile Include="app\components\accountdetails\accountDetails.component.ts" />
+    <TypeScriptCompile Include="app\components\accountView\accountView.component.ts" />
+    <TypeScriptCompile Include="app\components\accountView\accountView.module.ts" />
+    <TypeScriptCompile Include="app\components\accountView\accountView.service.ts" />
+    <TypeScriptCompile Include="app\components\accountView\accountView.ts" />
+    <TypeScriptCompile Include="app\components\comment\comment.component.ts" />
+    <TypeScriptCompile Include="app\components\comment\comment.ts" />
+    <TypeScriptCompile Include="app\components\episodeFinancialSummary\episodeFS.component.ts" />
+    <TypeScriptCompile Include="app\components\episodeFinancialSummary\episodeFS.ts" />
+    <TypeScriptCompile Include="app\components\episodeSummary\episodeSummary.component.ts" />
+    <TypeScriptCompile Include="app\components\episodeSummary\episodeSummary.ts" />
+    <TypeScriptCompile Include="app\components\episode\episode.component.ts" />
+    <TypeScriptCompile Include="app\components\episode\episode.ts" />
+    <TypeScriptCompile Include="app\components\episodeSummary\login\login.component.ts" />
+    <TypeScriptCompile Include="app\components\pageNotFound.component.ts" />
+    <TypeScriptCompile Include="app\components\episodeBanner\episodeBanner.component.ts" />
+    <TypeScriptCompile Include="app\components\episodeBanner\episodeBanner.ts" />
+    <TypeScriptCompile Include="app\components\patient\patient.component.ts" />
+    <TypeScriptCompile Include="app\components\patient\patient.ts" />
+    <TypeScriptCompile Include="app\components\shared\pipes\data-filter.pipe.ts" />
+    <TypeScriptCompile Include="app\components\transaction\transaction.component.ts" />
+    <TypeScriptCompile Include="app\components\transaction\transaction.ts" />
+    <TypeScriptCompile Include="app\components\visit\visit.ts" />
+    <TypeScriptCompile Include="app\main.ts" />
+    <Content Include="app\common\datagrid\datagrid.component.html" />
+    <Content Include="app\components\accountdetails\accountDetails.component.html" />
+    <Content Include="app\components\accountView\accountView.component.html" />
+    <Content Include="app\components\login\login.component.html" />
+    <Content Include="app\components\transactionV2\transactionV2.component.html" />
+    <Content Include="app\components\authentication\authentication.component.html" />
+    <Content Include="app\components\comment\comment.component.html" />
+    <Content Include="app\components\episodeFinancialSummary\episodeFS.component.html" />
+    <Content Include="app\components\episodeSummary\episodeSummary.component.html" />
+    <Content Include="app\components\episode\episode.component.html" />
+    <Content Include="app\components\episodeSummary\login\login.component.html" />
+    <Content Include="app\components\episodeBanner\episodeBanner.component.html" />
+    <Content Include="app\components\patient\patient.component.html" />
+    <Content Include="app\components\transaction\transaction.component.html" />
+    <Content Include="app\less\bootstrap\.csscomb.json" />
+    <Content Include="app\less\bootstrap\.csslintrc" />
+    <Content Include="app\less\bootstrap\alerts.less" />
+    <Content Include="app\less\bootstrap\badges.less" />
+    <Content Include="app\less\bootstrap\bootstrap.less" />
+    <Content Include="app\less\bootstrap\breadcrumbs.less" />
+    <Content Include="app\less\bootstrap\button-groups.less" />
+    <Content Include="app\less\bootstrap\buttons.less" />
+    <Content Include="app\less\bootstrap\carousel.less" />
+    <Content Include="app\less\bootstrap\close.less" />
+    <Content Include="app\less\bootstrap\code.less" />
+    <Content Include="app\less\bootstrap\component-animations.less" />
+    <Content Include="app\less\bootstrap\dropdowns.less" />
+    <Content Include="app\less\bootstrap\forms.less" />
+    <Content Include="app\less\bootstrap\glyphicons.less" />
+    <Content Include="app\less\bootstrap\grid.less" />
+    <Content Include="app\less\bootstrap\input-groups.less" />
+    <Content Include="app\less\bootstrap\jumbotron.less" />
+    <Content Include="app\less\bootstrap\labels.less" />
+    <Content Include="app\less\bootstrap\list-group.less" />
+    <Content Include="app\less\bootstrap\media.less" />
+    <Content Include="app\less\bootstrap\mixins.less" />
+    <Content Include="app\less\bootstrap\mixins\alerts.less" />
+    <Content Include="app\less\bootstrap\mixins\background-variant.less" />
+    <Content Include="app\less\bootstrap\mixins\border-radius.less" />
+    <Content Include="app\less\bootstrap\mixins\buttons.less" />
+    <Content Include="app\less\bootstrap\mixins\center-block.less" />
+    <Content Include="app\less\bootstrap\mixins\clearfix.less" />
+    <Content Include="app\less\bootstrap\mixins\forms.less" />
+    <Content Include="app\less\bootstrap\mixins\gradients.less" />
+    <Content Include="app\less\bootstrap\mixins\grid-framework.less" />
+    <Content Include="app\less\bootstrap\mixins\grid.less" />
+    <Content Include="app\less\bootstrap\mixins\hide-text.less" />
+    <Content Include="app\less\bootstrap\mixins\image.less" />
+    <Content Include="app\less\bootstrap\mixins\labels.less" />
+    <Content Include="app\less\bootstrap\mixins\list-group.less" />
+    <Content Include="app\less\bootstrap\mixins\nav-divider.less" />
+    <Content Include="app\less\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="app\less\bootstrap\mixins\opacity.less" />
+    <Content Include="app\less\bootstrap\mixins\pagination.less" />
+    <Content Include="app\less\bootstrap\mixins\panels.less" />
+    <Content Include="app\less\bootstrap\mixins\progress-bar.less" />
+    <Content Include="app\less\bootstrap\mixins\reset-filter.less" />
+    <Content Include="app\less\bootstrap\mixins\reset-text.less" />
+    <Content Include="app\less\bootstrap\mixins\resize.less" />
+    <Content Include="app\less\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="app\less\bootstrap\mixins\size.less" />
+    <Content Include="app\less\bootstrap\mixins\tab-focus.less" />
+    <Content Include="app\less\bootstrap\mixins\table-row.less" />
+    <Content Include="app\less\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="app\less\bootstrap\mixins\text-overflow.less" />
+    <Content Include="app\less\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="app\less\bootstrap\modals.less" />
+    <Content Include="app\less\bootstrap\navbar.less" />
+    <Content Include="app\less\bootstrap\navs.less" />
+    <Content Include="app\less\bootstrap\normalize.less" />
+    <Content Include="app\less\bootstrap\pager.less" />
+    <Content Include="app\less\bootstrap\pagination.less" />
+    <Content Include="app\less\bootstrap\panels.less" />
+    <Content Include="app\less\bootstrap\popovers.less" />
+    <Content Include="app\less\bootstrap\print.less" />
+    <Content Include="app\less\bootstrap\progress-bars.less" />
+    <Content Include="app\less\bootstrap\responsive-embed.less" />
+    <Content Include="app\less\bootstrap\responsive-utilities.less" />
+    <Content Include="app\less\bootstrap\scaffolding.less" />
+    <Content Include="app\less\bootstrap\tables.less" />
+    <Content Include="app\less\bootstrap\theme.less" />
+    <Content Include="app\less\bootstrap\thumbnails.less" />
+    <Content Include="app\less\bootstrap\tooltip.less" />
+    <Content Include="app\less\bootstrap\type.less" />
+    <Content Include="app\less\bootstrap\utilities.less" />
+    <Content Include="app\less\bootstrap\variables.less" />
+    <Content Include="app\less\bootstrap\wells.less" />
+    <Content Include="app\less\font-awesome\animated.less" />
+    <Content Include="app\less\font-awesome\bordered-pulled.less" />
+    <Content Include="app\less\font-awesome\core.less" />
+    <Content Include="app\less\font-awesome\fixed-width.less" />
+    <Content Include="app\less\font-awesome\font-awesome.less" />
+    <Content Include="app\less\font-awesome\icons.less" />
+    <Content Include="app\less\font-awesome\larger.less" />
+    <Content Include="app\less\font-awesome\list.less" />
+    <Content Include="app\less\font-awesome\mixins.less" />
+    <Content Include="app\less\font-awesome\path.less" />
+    <Content Include="app\less\font-awesome\rotated-flipped.less" />
+    <Content Include="app\less\font-awesome\screen-reader.less" />
+    <Content Include="app\less\font-awesome\stacked.less" />
+    <Content Include="app\less\font-awesome\variables.less" />
+    <Content Include="app\less\fonts\fontawesome-webfont.eot" />
+    <Content Include="app\less\fonts\fontawesome-webfont.svg" />
+    <Content Include="app\less\fonts\fontawesome-webfont.ttf" />
+    <Content Include="app\less\fonts\fontawesome-webfont.woff" />
+    <Content Include="app\less\fonts\fontawesome-webfont.woff2" />
+    <Content Include="app\less\fonts\FontAwesome.otf" />
+    <Content Include="app\less\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\less\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\less\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\less\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\less\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="app\less\sfm_ag_grid.less" />
+    <Content Include="app\less\sfm_base.less" />
+    <Content Include="app\less\sfm_comments.less" />
+    <Content Include="app\less\sfm_datatable.less" />
+    <Content Include="app\less\sfm_episodeFS.less" />
+    <Content Include="app\less\sfm_episodes.less" />
+    <Content Include="app\less\sfm_episode_banner.less" />
+    <Content Include="app\less\sfm_episode_summary.less" />
+    <Content Include="app\less\sfm_mixins.less" />
+    <Content Include="app\less\sfm_patients.less" />
+    <Content Include="app\less\sfm_transactions.less" />
+    <Content Include="app\less\sfm_wrapper.less" />
+    <Content Include="app\less\styles.css">
+      <SubType>Content</SubType>
+      <DependentUpon>app\less\styles.less</DependentUpon>
+    </Content>
+    <Content Include="app\less\styles.less" />
+    <Content Include="app\less\common.less" />
+    <Content Include="app\less\sfm_variables.less" />
+    <Content Include="assets\dev-tools\media sizes.html" />
+    <Content Include="assets\img\controls\arrowdown-nor-light-16-x-6.png" />
+    <Content Include="assets\img\controls\arrowleft-nor-light-16-x-16.png" />
+    <Content Include="assets\img\controls\arrowright-nor-dark-16-x-16.png" />
+    <Content Include="assets\img\controls\clear-nor-dark-16-x-16.png" />
+    <Content Include="assets\img\controls\more-nor-dark-24-x-24.png" />
+    <Content Include="assets\scripts\bootstrap\js\.jscsrc" />
+    <Content Include="assets\scripts\bootstrap\js\.jshintrc" />
+    <Content Include="assets\scripts\bootstrap\js\tests\index.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\README.md" />
+    <Content Include="assets\scripts\bootstrap\js\tests\unit\.jshintrc" />
+    <Content Include="assets\scripts\bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\affix-with-sticky-footer.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\affix.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\alert.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\button.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\carousel.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\collapse.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\dropdown.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\modal.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\popover.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\scrollspy.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\tab.html" />
+    <Content Include="assets\scripts\bootstrap\js\tests\visual\tooltip.html" />
+    <None Include="compilerconfig.json" />
+    <Content Include="assets\styles\prettify-angulario.css" />
+    <Content Include="assets\styles\ng2-bootstrap-style.css" />
+    <Content Include="assets\styles\sfm_ag_grid.css" />
+    <Content Include="assets\styles\sfm_ag_grid.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>assets\styles\sfm_ag_grid.css</DependentUpon>
+    </Content>
+    <Content Include="assets\styles\sfm_base.css" />
+    <Content Include="assets\styles\sfm_base.min.css" />
+    <Content Include="assets\styles\sfm_comments.css" />
+    <Content Include="assets\styles\sfm_comments.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>assets\styles\sfm_comments.css</DependentUpon>
+    </Content>
+    <Content Include="assets\styles\sfm_datatable.css" />
+    <Content Include="assets\styles\sfm_datatable.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>assets\styles\sfm_datatable.css</DependentUpon>
+    </Content>
+    <Content Include="assets\styles\sfm_episodeFS.css" />
+    <Content Include="assets\styles\sfm_episodeFS.min.css" />
+    <Content Include="assets\styles\sfm_episodes.css" />
+    <Content Include="assets\styles\sfm_episodes.min.css" />
+    <Content Include="assets\styles\sfm_episode_banner.css" />
+    <Content Include="assets\styles\sfm_episode_banner.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>assets\styles\sfm_episode_banner.css</DependentUpon>
+    </Content>
+    <Content Include="assets\styles\sfm_episode_summary.css" />
+    <Content Include="assets\styles\sfm_episode_summary.min.css" />
+    <Content Include="assets\styles\sfm_patients.css" />
+    <Content Include="assets\styles\sfm_patients.min.css" />
+    <Content Include="assets\styles\sfm_transactions.css" />
+    <Content Include="assets\styles\sfm_transactions.min.css" />
+    <Content Include="assets\styles\sfm_wrapper.css" />
+    <Content Include="assets\styles\sfm_wrapper.min.css" />
+    <Content Include="assets\styles\styles.css" />
+    <Content Include="assets\styles\styles.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>assets\styles\styles.css</DependentUpon>
+    </Content>
+    <Content Include="compilerconfig.json.defaults">
+      <SubType>Content</SubType>
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
+    <Content Include="favicon.png" />
+    <Content Include="index.html" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="typings.json" />
+    <Content Include="typings\globals\core-js\typings.json" />
+    <Content Include="typings\globals\node\typings.json" />
+    <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\common\" />
+    <Folder Include="app\common\accordion\" />
+    <Folder Include="app\common\agGrid\" />
+    <Folder Include="app\common\collapse\" />
+    <Folder Include="app\common\component-loader\" />
+    <Folder Include="app\common\constants\" />
+    <Folder Include="app\common\dropdown\" />
+    <Folder Include="app\common\helper\" />
+    <Folder Include="app\common\datagrid\" />
+    <Folder Include="app\common\modal\" />
+    <Folder Include="app\common\loading\" />
+    <Folder Include="app\common\positioning\" />
+    <Folder Include="app\common\tabs\" />
+    <Folder Include="app\common\tooltip\" />
+    <Folder Include="app\common\utils\" />
+    <Folder Include="app\components\comment\" />
+    <Folder Include="app\components\episodeFinancialSummary\" />
+    <Folder Include="app\components\episodeSummary\" />
+    <Folder Include="app\components\episode\" />
+    <Folder Include="app\components\episodeSummary\login\" />
+    <Folder Include="app\components\accountView\" />
+    <Folder Include="app\components\accountdetails\" />
+    <Folder Include="app\components\episodeBanner\" />
+    <Folder Include="app\components\authentication\" />
+    <Folder Include="app\components\login\" />
+    <Folder Include="app\components\transactionV2\" />
+    <Folder Include="app\components\patient\" />
+    <Folder Include="app\components\" />
+    <Folder Include="app\components\shared\" />
+    <Folder Include="app\components\shared\pipes\" />
+    <Folder Include="app\components\transaction\" />
+    <Folder Include="app\components\unbilled\" />
+    <Folder Include="app\components\visit\" />
+    <Folder Include="app\less\" />
+    <Folder Include="app\less\bootstrap\mixins\" />
+    <Folder Include="app\less\font-awesome\" />
+    <Folder Include="app\less\bootstrap\" />
+    <Folder Include="app\less\fonts\" />
+    <Folder Include="app\enum\" />
+    <Folder Include="assets\" />
+    <Folder Include="assets\img\" />
+    <Folder Include="assets\img\controls\" />
+    <Folder Include="assets\dev-tools\" />
+    <Folder Include="assets\scripts\" />
+    <Folder Include="assets\scripts\bootstrap\" />
+    <Folder Include="assets\scripts\bootstrap\js\" />
+    <Folder Include="assets\scripts\bootstrap\js\tests\" />
+    <Folder Include="assets\scripts\bootstrap\js\tests\unit\" />
+    <Folder Include="assets\scripts\bootstrap\js\tests\vendor\" />
+    <Folder Include="assets\scripts\bootstrap\js\tests\visual\" />
+    <Folder Include="assets\styles\" />
+    <Folder Include="typings\" />
+    <Folder Include="typings\globals\" />
+    <Folder Include="typings\globals\core-js\" />
+    <Folder Include="typings\globals\node\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="assets\scripts\bootstrap\js\affix.js" />
+    <Compile Include="assets\scripts\bootstrap\js\alert.js" />
+    <Compile Include="assets\scripts\bootstrap\js\button.js" />
+    <Compile Include="assets\scripts\bootstrap\js\carousel.js" />
+    <Compile Include="assets\scripts\bootstrap\js\collapse.js" />
+    <Compile Include="assets\scripts\bootstrap\js\dropdown.js" />
+    <Compile Include="assets\scripts\bootstrap\js\modal.js" />
+    <Compile Include="assets\scripts\bootstrap\js\popover.js" />
+    <Compile Include="assets\scripts\bootstrap\js\scrollspy.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tab.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\affix.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\alert.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\button.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\carousel.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\collapse.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\dropdown.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\modal.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\phantom.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\popover.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\scrollspy.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\tab.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\unit\tooltip.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\vendor\jquery.min.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tests\vendor\qunit.js" />
+    <Compile Include="assets\scripts\bootstrap\js\tooltip.js" />
+    <Compile Include="assets\scripts\bootstrap\js\transition.js" />
+    <Compile Include="bs-config.js" />
+    <Compile Include="systemjs.config.js" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,140 @@
+﻿@import (reference) 'sfm_variables.less';
+@import (reference) 'sfm_mixins.less';
+
+div.sfm-episode-summary.row{
+    padding: @sfm-episode-summary-row-padding;
+    background-color: @white;
+    .panel-group{//accordion
+        accordion-group{
+            &.panel-open{
+                div.panel.card.panel-default{
+                    border: @sfm-episode-summary-border-open;
+                    div.panel-heading.card-header{
+                        background-color: @brand-primary;
+                        div.accordion-toggle{
+                            div{//accordion-heading
+                                span.h3{
+                                    color: @white;
+                                }
+                                span.badge{
+                                    color: @brand-primary;
+                                    background-color: @white;
+                                }
+                                div.pull-right{
+                                                            
+                                    span.small{
+                                        color: @white;
+                                    }
+                                    span.sfm-divider{
+                                        font-size: @font-size-xlarge;
+                                        color: @sfm-icon-white-fade;
+                                        padding-top: @sfm-episode-summary-sfm-divider-padding-top;
+                                    }
+                                    i.fa.fa-2x{
+                                        color: @white;
+                                        &.fa-angle-down{
+                                            color: @white;
+                                        }
+                                    }
+                                }
+                            }
+                        }//accordion-toggle
+                    }//panel-heading
+                }//.panel.card.panel-default
+            }//&panel-open
+            div.panel.card.panel-default{//not specifically open
+                    border: @sfm-episode-summary-border-closed;
+                div.panel-heading.card-header{
+                    background-color: @gray-light;
+                    div.accordion-toggle{
+                        div{//accordion-heading
+                            span.h3{
+                                color:  @gray-dark;
+                            }
+                            span.badge{
+                                color: @gray-light;
+                                background-color:  @gray-dark;
+                            }
+                            span.pull-right{
+                                span.small{
+                                    color: @gray-dark;
+                                }
+                                span.sfm-divider{
+                                    font-size: @font-size-xlarge;
+                                    color: @sfm-icon-gray-fade;
+                                }
+                                i.fa.fa-2x{
+                                    color: @gray-dark;
+                                    &.fa-angle-right{
+                                        color: @gray-dark;
+                                    }
+                                }
+                            }
+                        }
+                    }//accordion-toggle
+                }//.panel-heading.card-header
+                div.panel-collapse{
+                    div.panel-body.card-block{
+                        div.row{
+                            margin:@sfm-row-padding-margin;
+                            &.sfm-episode-sum-details{
+                                padding-top: @sfm-episode-summary-details-padding;
+                                padding-bottom: @sfm-episode-summary-details-padding;
+                                background-color: @gray-light;
+                                border-bottom: @sfm-episode-summary-details-border;
+                                div{
+                                    &.col-md-5{
+                                        border-right: @sfm-episode-summary-details-border;
+                                        div.row{
+                                            div{
+                                                &.col-xs-4{
+                                                    span{
+                                                        &.small{}
+                                                        &.sfm-episode-sum-insurance{
+                                                            font-size: @font-size-base;
+                                                            font-weight: @sfm-episode-summary-details-span-bigger-font-weight;
+                                                        }
+                                                        &.sfm-episode-sum-dr{
+                                                            font-size: @font-size-base;
+                                                            font-weight: @sfm-episode-summary-details-span-bigger-font-weight;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.col-md-7{                                                             
+                                        div.row{
+                                            div{
+                                                &.col-xs-4,
+                                                &.col-xs-3,
+                                                &.col-xs-2{                                                       
+                                                    span{
+                                                        &.small{}
+                                                        &.sfm-episode-sum-insurance{
+                                                            font-size: @font-size-base;
+                                                            font-weight: @sfm-episode-summary-details-span-bigger-font-weight;
+                                                        }
+                                                        &.sfm-episode-sum-dr{
+                                                            font-size: @font-size-base;
+                                                            font-weight: @sfm-episode-summary-details-span-bigger-font-weight;
+                                                        }
+                                                        &.pull-right{
+                                                            i{
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            div.col-md-9{}
+                        }//row
+                    }//panel-body
+                }//collapse                     
+            }//panel.card.panel-default
+        }//accordion-group
+    }//.panel-group                            
+}//sfm-episode-summary row

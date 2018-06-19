@@ -1,0 +1,59 @@
+﻿<ul class="list-group sfm-episodeSF" *ngIf='episodeFinancialInfo && episodeFinancialInfo.totalCharges'>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Total Charges</span>
+        <span class="pull-right">{{episodeFinancialInfo.totalCharges | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Total Payments</span>
+        <span class="pull-right">{{episodeFinancialInfo.totalPayment | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Total Adjustment</span>
+        <span class="pull-right">{{episodeFinancialInfo.totalAdjustment | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-balance">Balance</span>
+        <span class="pull-right balance-line">
+            <span class="sfm-balance-value">
+                {{episodeFinancialInfo.totalCharges - (episodeFinancialInfo.totalPayment + episodeFinancialInfo.totalAdjustment) | currency:'USD':true:'1.2-2'}}
+            </span>
+        </span>
+    </li>
+</ul>
+
+<ul class="list-group sfm-episodeSF" *ngIf='episodeFinancialInfo && episodeFinancialInfo.totalCharges'>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Unbilled - Charges</span>
+        <span class="pull-right">{{episodeFinancialInfo.unbilled | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Late Charges - Write Off</span>
+        <span class="pull-right">{{episodeFinancialInfo.lateCharge | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Unallocated</span>
+        <span class="pull-right">{{episodeFinancialInfo.unAllocated | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Exempt From Billing</span>
+        <span class="pull-right">{{episodeFinancialInfo.exempt | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Claims</span>
+        <span class="pull-right">{{episodeFinancialInfo.claims | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Unbilled Selfpay</span>
+        <span class="pull-right">{{episodeFinancialInfo.ubSelfP | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-episodeSF-title">Selfpay</span>
+        <span class="pull-right">{{episodeFinancialInfo.selfP | currency:'USD':true:'1.2-2'}}</span>
+    </li>
+    <li class="list-group-item">
+        <span class="sfm-balance">Balance</span>
+        <span class="pull-right balance-line">
+            <span class="sfm-balance-value">{{0 | currency:'USD':true:'1.2-2'}}</span>
+        </span>
+    </li>
+</ul>

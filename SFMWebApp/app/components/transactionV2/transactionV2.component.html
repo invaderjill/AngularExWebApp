@@ -1,0 +1,9 @@
+﻿<div class="sfm-transactionsv2">
+    <div [ngBusy]="busy"></div>
+    <div class="sfm-transactions-header">Transactions <span class="small" *ngIf="numberOfTransactions">({{numberOfTransactions}})</span></div>
+    <ag-grid-angular #agGrid  class="ag-bootstrap"
+                     [gridOptions]="gridOptions">
+    </ag-grid-angular>
+    <a role="button" (click)="showAll($event)" *ngIf="canShowMore">Show More</a>
+    <span class="small" *ngIf="!canShowMore">Showing All</span>
+</div>
